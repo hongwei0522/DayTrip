@@ -36,10 +36,11 @@ gsap.to("#location-alllogo img", {
     toggleActions: "restart pause reverse pause"},
   y:-250, opacity:1 ,duration:3, stagger:{each:1}})
 
+  //標籤效果
 gsap.to(".trip-progress", {
   scrollTrigger: {
     trigger: ".trip",
-    markers:true,
+    // markers:true,
     start: "top center",
     end: "80% center",
     scrub: true,
@@ -59,6 +60,8 @@ gsap.to(".trip-pin", {
 },
 })
 
+
+
 //一日遊
 let tripEast = document.getElementById("tripEast");
 
@@ -75,11 +78,12 @@ model = function(dom, className, id, src, append, text, func){
 for(let i = 0; i <DayTripData.length; i++){
   if(DayTripData[i].direction == "東岸"){
     tripEastDiv(i)
+    tripMaps(i)
   }
 }
 
 function tripEastDiv(i){
-  model("div", "", DayTripData[i].creatTime, "", "tripEast", "", "");
+  model("div", "tripEastDiv", DayTripData[i].creatTime, "", "tripEast", "", "");
   model("img", "trip-location", "", DayTripData[i].photoUrl, DayTripData[i].creatTime, "", "");
   model("p", "trip-center-word", "", "", DayTripData[i].creatTime, DayTripData[i].location, "");
   model("p", "trip-center-word", "", "", DayTripData[i].creatTime, DayTripData[i].content, "");
@@ -89,3 +93,79 @@ function tripEastDiv(i){
 }
 
 //地圖
+function tripMaps(i){
+  let tripMap = document.getElementById("tripMap");
+  console.log(tripMap.clientHeight)
+  let a = document.getElementById(DayTripData[i].creatTime)
+  a.clientHeight = tripMap.clientHeight
+  console.log(a.clientHeight)
+
+  // document.getElementById(DayTripData[i].clientHeight) = tripMap.clientHeight
+}
+
+//地圖效果
+gsap.to(".trip-map", {
+  scrollTrigger:{
+  trigger:".trip-map",
+  start: "top top",
+  end: "+=930 top",
+  // markers:true,
+  pin:true,
+},
+})
+
+gsap.to(".tripStation", {
+  scrollTrigger:{
+  trigger:".tripStation",
+  start: "top top",
+  end: "+=930 top",
+  // markers:true,
+  toggleActions: "play reset play reset"
+},
+opacity:0})
+
+gsap.to(".EA1-1", {
+  scrollTrigger:{
+  trigger:"#EA1-1",
+  start: "top top",
+  end: "bottom top",
+  toggleActions: "play reset play reset"
+},
+opacity:1,duration:3})
+
+gsap.to(".EA1-2", {
+  scrollTrigger:{
+  trigger:"#EA1-2",
+  start: "top top",
+  end: "bottom top",
+  toggleActions: "play reset play reset"
+},
+opacity:1,duration:3})
+
+gsap.to(".EA1-3", {
+  scrollTrigger:{
+  trigger:"#EA1-3",
+  start: "top top",
+  end: "bottom top",
+  toggleActions: "play reset play reset"
+},
+opacity:1,duration:3})
+
+gsap.to(".EA1-4", {
+  scrollTrigger:{
+  trigger:"#EA1-4",
+  start: "top top",
+  end: "bottom top",
+  toggleActions: "play reset play reset"
+},
+opacity:1,duration:3})
+
+gsap.to(".EA1-5", {
+  scrollTrigger:{
+  trigger:"#EA1-5",
+  start: "top top",
+  end: "bottom top",
+  toggleActions: "play reset play reset"
+},
+opacity:1,duration:3})
+
