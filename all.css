@@ -85,7 +85,7 @@ table {
 .introduction-word{
 	position: absolute;
 	cursor: pointer;
-	color: white;
+	color: black;
 	font-size: 36px;
 }
 .introduction-east{
@@ -142,16 +142,48 @@ table {
 .trip-word{
 	writing-mode: vertical-lr 
 }
-.trip-progress{
+.trip-progressEast{
 	width: 100%;
   	height: 100%;
 	transition: all .3s ease-out;
 	display: inline-block;
-	background-color: red;
+	background-image: linear-gradient(red 0%, orange 100%);
+}
+.trip-progressWest{
+	width: 100%;
+  	height: 100%;
+	transition: all .3s ease-out;
+	display: inline-block;
+	background-image:linear-gradient(orange 0%, red 100%);
+}
+.trip-progressCenter{
+	width: 100%;
+  	height: 100%;
+	transition: all .3s ease-out;
+	display: inline-block;
+	background-image:linear-gradient(red 0%, orange 100%);
 }
 
 .tripEastDiv{
 	border: 1px black solid;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.tripWestDiv{
+	border: 1px black solid;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.tripCenterDiv{
+	border: 1px black solid;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 .trip-center{
 	width: 27%;
@@ -159,8 +191,8 @@ table {
 	justify-content: space-between;
 }
 .trip-location{
-	width: 200px;
-	height: 150px;
+	width: 300px;
+	height: 200px;
 	display: block;
 	margin: 0 auto;
 	margin-top: 30px;
@@ -170,33 +202,38 @@ table {
 .trip-center-word{
 	padding: 0 20px 20px 20px;
 	text-align: center;
+	font-size: 30px;
 }
-/* .trip-button{
+.trip-center-word-left{
+	padding: 0 20px 20px 20px;
+	text-align: left;
+	font-size: 20px;
+}
+.trip-button{
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
-} */
+}
 .trip-button-prev{
 	width: 30%;
 	border-right: 1px black solid;
-	font-size: 24px;
+	border-radius: 30px;
+	font-size: 20px;
 }
 .trip-button-next{
 	width: 30%;
 	border-left: 1px black solid;
-	font-size: 24px;
+	border-radius: 30px;
+	font-size: 20px;
 }
 
 .trip-map{
 	width: 60%;
 	position: relative;
-	/* background-image: url(https://github.com/hongwei0522/DayTrip/blob/master/picture/%E6%9D%B1%E5%B2%B8.JPG?raw=true);
-	background-repeat: no-repeat;
-	background-size: 100%; */
 }
 .trip-map-gif{
 	position: absolute;
-	max-width: 100%;
+	width: 100%;
 }
 .tripStation{
 	position: absolute;
