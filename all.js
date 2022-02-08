@@ -178,11 +178,11 @@ gsap.to(".trip-map", {
 
 gsap.to(".tripStation", {
   scrollTrigger:{
-  trigger:".tripStation",
+  trigger:".trip",
   start: "top top",
   end: `${tripContentHeight} top`,
-  // markers:true,
-  toggleActions: "play reset play reset"
+  markers:true,
+  // toggleActions: "play reset play reset"
 },
 opacity:0})
 
