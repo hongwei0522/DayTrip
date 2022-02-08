@@ -22,8 +22,8 @@ gsap.to(".introduction", {
     start: "top 20%",
     end: "bottom 20%",
     // scrub:true,
-    toggleActions: "restart pause reverse pause"}, 
-  opacity:1 ,duration:3})
+    toggleActions: "play reset play reset"}, 
+  opacity:1.5 ,duration:3})
   
 //基隆在哪裡效果
 gsap.to("#location-alllogo img", {
