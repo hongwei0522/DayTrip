@@ -61,7 +61,30 @@ for(let i = 0; i <DayTripData.length; i++){
   }else if(DayTripData[i].direction == "市區"){
     tripCenterDiv(i)
   }
+  //上一個按鈕
+  let prevBtns = document.getElementById("prevBtn"+[i]);
+  prevBtns.onclick = prev
+  let prevNumber = i;
+  function prev(){
+    if(prevBtns == prevBtn0){
+      window.location.hash = "#DayTrip15";
+    }else{
+      window.location.hash = "#DayTrip" + prevNumber;
+    }
+  }
+  //下一個按鈕
+  let nextBtns = document.getElementById("nextBtn"+[i]);
+  nextBtns.onclick = next
+  let nextNumber = i + 2;
+  function next(){
+    if(nextBtns == nextBtn14){
+      window.location.hash = "#DayTrip1";
+    }else{
+      window.location.hash = "#DayTrip" + nextNumber;
+    }
+  }
 }
+
 
 function tripEastDiv(i){
   model("div", "tripEastDiv", DayTripData[i].creatTime, "", "tripEast", "", "");
@@ -69,8 +92,8 @@ function tripEastDiv(i){
   model("p", "trip-center-word", "", "", DayTripData[i].creatTime, DayTripData[i].location, "");
   model("p", "trip-center-word-left", "", "", DayTripData[i].creatTime, DayTripData[i].content, "");
   model("div", "trip-button", "tripBtnDiv"+[i], "", DayTripData[i].creatTime, "", "");
-  model("button", "trip-button-prev", "prevBtn", "", "tripBtnDiv"+[i],"上一個景點", "");
-  model("button", "trip-button-next", "nextBtn", "", "tripBtnDiv"+[i],"下一個景點", "");
+  model("button", "trip-button-prev", "prevBtn"+[i], "", "tripBtnDiv"+[i],"上一個景點", "");
+  model("button", "trip-button-next", "nextBtn"+[i], "", "tripBtnDiv"+[i],"下一個景點", "");
 }
 function tripWestDiv(i){
   model("div", "tripWestDiv", DayTripData[i].creatTime, "", "tripWest", "", "");
@@ -78,8 +101,8 @@ function tripWestDiv(i){
   model("p", "trip-center-word", "", "", DayTripData[i].creatTime, DayTripData[i].location, "");
   model("p", "trip-center-word-left", "", "", DayTripData[i].creatTime, DayTripData[i].content, "");
   model("div", "trip-button", "tripBtnDiv"+[i], "", DayTripData[i].creatTime, "", "");
-  model("button", "trip-button-prev", "prevBtn", "", "tripBtnDiv"+[i],"上一個景點", "");
-  model("button", "trip-button-next", "nextBtn", "", "tripBtnDiv"+[i],"下一個景點", "");
+  model("button", "trip-button-prev", "prevBtn"+[i], "", "tripBtnDiv"+[i],"上一個景點", "");
+  model("button", "trip-button-next", "nextBtn"+[i], "", "tripBtnDiv"+[i],"下一個景點", "");
 }
 function tripCenterDiv(i){
   model("div", "tripCenterDiv", DayTripData[i].creatTime, "", "tripCenter", "", "");
@@ -87,9 +110,10 @@ function tripCenterDiv(i){
   model("p", "trip-center-word", "", "", DayTripData[i].creatTime, DayTripData[i].location, "");
   model("p", "trip-center-word-left", "", "", DayTripData[i].creatTime, DayTripData[i].content, "");
   model("div", "trip-button", "tripBtnDiv"+[i], "", DayTripData[i].creatTime, "", "");
-  model("button", "trip-button-prev", "prevBtn", "", "tripBtnDiv"+[i],"上一個景點", "");
-  model("button", "trip-button-next", "nextBtn", "", "tripBtnDiv"+[i],"下一個景點", "");
+  model("button", "trip-button-prev", "prevBtn"+[i], "", "tripBtnDiv"+[i],"上一個景點", "");
+  model("button", "trip-button-next", "nextBtn"+[i], "", "tripBtnDiv"+[i],"下一個景點", "");
 }
+
 
 
 let tripEastDivHeight = document.querySelector('.tripEastDiv').clientHeight;
@@ -186,45 +210,45 @@ gsap.to(".tripStation", {
 },
 opacity:0})
 
-gsap.to(".EA1-1", {
+gsap.to(".DayTrip1", {
   scrollTrigger:{
-  trigger:"#EA1-1",
+  trigger:"#DayTrip1",
   start: "top top",
   end: "bottom top",
   toggleActions: "play reset play reset"
 },
 opacity:1,duration:3})
 
-gsap.to(".EA1-2", {
+gsap.to(".DayTrip2", {
   scrollTrigger:{
-  trigger:"#EA1-2",
+  trigger:"#DayTrip2",
   start: "top top",
   end: "bottom top",
   toggleActions: "play reset play reset"
 },
 opacity:1,duration:3})
 
-gsap.to(".EA1-3", {
+gsap.to(".DayTrip3", {
   scrollTrigger:{
-  trigger:"#EA1-3",
+  trigger:"#DayTrip3",
   start: "top top",
   end: "bottom top",
   toggleActions: "play reset play reset"
 },
 opacity:1,duration:3})
 
-gsap.to(".EA1-4", {
+gsap.to(".DayTrip4", {
   scrollTrigger:{
-  trigger:"#EA1-4",
+  trigger:"#DayTrip4",
   start: "top top",
   end: "bottom top",
   toggleActions: "play reset play reset"
 },
 opacity:1,duration:3})
 
-gsap.to(".EA1-5", {
+gsap.to(".DayTrip5", {
   scrollTrigger:{
-  trigger:"#EA1-5",
+  trigger:"#DayTrip5",
   start: "top top",
   end: "bottom top",
   toggleActions: "play reset play reset"
@@ -253,45 +277,45 @@ gsap.to(".tripStationWest", {
 },
 opacity:0})
 
-gsap.to(".WE1-1", {
+gsap.to(".DayTrip6", {
   scrollTrigger:{
-  trigger:"#WE1-1",
+  trigger:"#DayTrip6",
   start: "top top",
   end: "bottom top",
   toggleActions: "play reset play reset"
 },
 opacity:1,duration:3})
 
-gsap.to(".WE1-2", {
+gsap.to(".DayTrip7", {
   scrollTrigger:{
-  trigger:"#WE1-2",
+  trigger:"#DayTrip7",
   start: "top top",
   end: "bottom top",
   toggleActions: "play reset play reset"
 },
 opacity:1,duration:3})
 
-gsap.to(".WE1-3", {
+gsap.to(".DayTrip8", {
   scrollTrigger:{
-  trigger:"#WE1-3",
+  trigger:"#DayTrip8",
   start: "top top",
   end: "bottom top",
   toggleActions: "play reset play reset"
 },
 opacity:1,duration:3})
 
-gsap.to(".WE1-4", {
+gsap.to(".DayTrip9", {
   scrollTrigger:{
-  trigger:"#WE1-4",
+  trigger:"#DayTrip9",
   start: "top top",
   end: "bottom top",
   toggleActions: "play reset play reset"
 },
 opacity:1,duration:3})
 
-gsap.to(".WE1-5", {
+gsap.to(".DayTrip10", {
   scrollTrigger:{
-  trigger:"#WE1-5",
+  trigger:"#DayTrip10",
   start: "top top",
   end: "bottom top",
   toggleActions: "play reset play reset"
@@ -319,45 +343,45 @@ gsap.to(".tripStationCenter", {
 },
 opacity:0})
 
-gsap.to(".CT1-1", {
+gsap.to(".DayTrip11", {
   scrollTrigger:{
-  trigger:"#CT1-1",
+  trigger:"#DayTrip11",
   start: "top top",
   end: "bottom top",
   toggleActions: "play reset play reset"
 },
 opacity:1,duration:3})
 
-gsap.to(".CT1-2", {
+gsap.to(".DayTrip12", {
   scrollTrigger:{
-  trigger:"#CT1-2",
+  trigger:"#DayTrip12",
   start: "top top",
   end: "bottom top",
   toggleActions: "play reset play reset"
 },
 opacity:1,duration:3})
 
-gsap.to(".CT1-3", {
+gsap.to(".DayTrip13", {
   scrollTrigger:{
-  trigger:"#CT1-3",
+  trigger:"#DayTrip13",
   start: "top top",
   end: "bottom top",
   toggleActions: "play reset play reset"
 },
 opacity:1,duration:3})
 
-gsap.to(".CT1-4", {
+gsap.to(".DayTrip14", {
   scrollTrigger:{
-  trigger:"#CT1-4",
+  trigger:"#DayTrip4",
   start: "top top",
   end: "bottom top",
   toggleActions: "play reset play reset"
 },
 opacity:1,duration:3})
 
-gsap.to(".CT1-5", {
+gsap.to(".DayTrip15", {
   scrollTrigger:{
-  trigger:"#CT1-5",
+  trigger:"#DayTrip15",
   start: "top top",
   end: "bottom top",
   toggleActions: "play reset play reset"
