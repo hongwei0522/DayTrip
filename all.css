@@ -344,5 +344,49 @@ table {
 }
 
 @media (max-width: 479px){
-    
+    .location-alllogo{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+	.title{
+		justify-content: space-between;
+	}
+	.title-project{
+		width: 60%;
+	}
+	.title-project-position{
+		margin-right: 20px;
+	}
+	.location-alllogo{
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	.location-logo{
+		width: 150px;
+		height: 150px;
+		margin-bottom: 30px;
+	}
+	.trip-title{
+		width: 20%;
+	}
+	.trip-logo{
+		width: 38px;
+		height: 38px;
+	}
+	.trip-word{
+		font-size: 12px;
+		text-align: center;
+	}
+	.trip-center{
+		width: auto;
+	}
+	.trip-location{
+		width: 250px;
+		height: 150px;
+	}
+	.trip-center-word-left{
+		font-size: 18px;
+	}
 }

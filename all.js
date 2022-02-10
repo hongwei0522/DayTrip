@@ -26,18 +26,36 @@ gsap.to(".introduction", {
   opacity:1.5 ,duration:3})
   
 //基隆在哪裡效果
-gsap.to("#location-alllogo img", {
-  scrollTrigger: {
-    trigger:".location",
-    // markers:true,
-    start: "top center",
-    end: "center center",
-    scrub:true,
-    toggleActions: "restart pause reverse pause"},
-  y:-250, opacity:1 ,duration:3, stagger:{each:1}})
+function isMobile() {
+  try{ document.createEvent("TouchEvent"); return true; }
+  catch(e){ return false;}
+}
 
+if(isMobile()){
+  gsap.to("#location-alllogo img", {
+    scrollTrigger: {
+      trigger:".location",
+      // markers:true,
+      start: "top center",
+      end: "center center",
+      scrub:true,
+      toggleActions: "restart pause reverse pause"},
+    y:-100, opacity:1 ,duration:3, stagger:{each:1}});
 
-
+  document.getElementById("tripMap").style.display="none";
+  document.getElementById("tripWestMap").style.display="none";
+  document.getElementById("tripCenterMap").style.display="none";
+}else{
+  gsap.to("#location-alllogo img", {
+    scrollTrigger: {
+      trigger:".location",
+      // markers:true,
+      start: "top center",
+      end: "center center",
+      scrub:true,
+      toggleActions: "restart pause reverse pause"},
+    y:-250, opacity:1 ,duration:3, stagger:{each:1}})
+}
 
 
 //一日遊
