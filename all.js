@@ -10,7 +10,7 @@ introductionTweens.forEach(function(introductionTween, index){
     gsap.defaults({duration:3})
     let tweenRed = gsap
     .timeline({ paused: true})
-    .to(introductionTween.querySelector(".introduction-word"), {color:"red" , y: 50, scale:1.5})
+    .to(introductionTween.querySelector(".introduction-word"), {color:"rgb(165, 219, 245)" , y: 50, scale:1.5})
     introductionTween.addEventListener("mouseenter" , () => tweenRed.play());
     introductionTween.addEventListener("mouseleave" , () => tweenRed.reverse());
 })
@@ -26,12 +26,8 @@ gsap.to(".introduction", {
   opacity:1.5 ,duration:3})
   
 //基隆在哪裡效果
-function isMobile() {
-  try{ document.createEvent("TouchEvent"); return true; }
-  catch(e){ return false;}
-}
 
-if(isMobile()){
+if(window.innerWidth < 1010){
   gsap.to("#location-alllogo img", {
     scrollTrigger: {
       trigger:".location",
@@ -45,6 +41,45 @@ if(isMobile()){
   document.getElementById("tripMap").style.display="none";
   document.getElementById("tripWestMap").style.display="none";
   document.getElementById("tripCenterMap").style.display="none";
+  //東岸
+  gsap.to(".trip-progressEast", {
+    scrollTrigger: {
+      trigger: ".trip",
+      // markers:true,
+      start: "top center",
+      end: "80% center",
+      scrub: true,
+    },
+    scaleY: 12.5,
+    transformOrigin: "top", 
+    ease: "none"
+  })
+  //西岸
+  gsap.to(".trip-progressWest", {
+    scrollTrigger: {
+      trigger: ".tripWest",
+      // markers:true,
+      start: "top center",
+      end: "80% center",
+      scrub: true,
+    },
+    scaleY: 12.5,
+    transformOrigin: "top", 
+    ease: "none"
+  })
+  //市區
+  gsap.to(".trip-progressCenter", {
+    scrollTrigger: {
+      trigger: ".tripCenter",
+      // markers:true,
+      start: "top center",
+      end: "80% center",
+      scrub: true,
+    },
+    scaleY: 12.5,
+    transformOrigin: "top", 
+    ease: "none"
+  })
 }else{
   gsap.to("#location-alllogo img", {
     scrollTrigger: {
@@ -55,6 +90,45 @@ if(isMobile()){
       scrub:true,
       toggleActions: "restart pause reverse pause"},
     y:-250, opacity:1 ,duration:3, stagger:{each:1}})
+  //東岸
+  gsap.to(".trip-progressEast", {
+    scrollTrigger: {
+      trigger: ".trip",
+      // markers:true,
+      start: "top center",
+      end: "80% center",
+      scrub: true,
+    },
+    scaleY: 8.5,
+    transformOrigin: "top", 
+    ease: "none"
+  })
+  //西岸
+  gsap.to(".trip-progressWest", {
+    scrollTrigger: {
+      trigger: ".tripWest",
+      // markers:true,
+      start: "top center",
+      end: "80% center",
+      scrub: true,
+    },
+    scaleY: 8.5,
+    transformOrigin: "top", 
+    ease: "none"
+  })
+  //市區
+  gsap.to(".trip-progressCenter", {
+    scrollTrigger: {
+      trigger: ".tripCenter",
+      // markers:true,
+      start: "top center",
+      end: "80% center",
+      scrub: true,
+    },
+    scaleY: 8.5,
+    transformOrigin: "top", 
+    ease: "none"
+  })
 }
 
 
@@ -136,70 +210,35 @@ function tripCenterDiv(i){
 
 let tripEastDivHeight = document.querySelector('.tripEastDiv').clientHeight;
 let tripContentHeight = tripEastDivHeight*4;
-console.log(tripContentHeight)
 
 //標籤效果
 //東岸
-gsap.to(".trip-progressEast", {
-  scrollTrigger: {
-    trigger: ".trip",
-    // markers:true,
-    start: "top center",
-    end: "80% center",
-    scrub: true,
-  },
-  scaleY: 5.5,
-  transformOrigin: "top", 
-  ease: "none"
-})
 gsap.to(".trip-pin-east", {
   scrollTrigger:{
   trigger:".trip-pin-east",
-  start: "top 10%",
+  start: "top top",
   end: `${tripContentHeight} top`,
   // markers:true,
   pin:true,
 },
 })
 //西岸
-gsap.to(".trip-progressWest", {
-  scrollTrigger: {
-    trigger: ".tripWest",
-    // markers:true,
-    start: "top center",
-    end: "80% center",
-    scrub: true,
-  },
-  scaleY: 5.5,
-  transformOrigin: "top", 
-  ease: "none"
-})
+
 gsap.to(".trip-pin-west", {
   scrollTrigger:{
   trigger:".trip-pin-west",
-  start: "top 10%",
+  start: "top top",
   end: `${tripContentHeight} top`,
   // markers:true,
   pin:true,
 },
 })
 //市區
-gsap.to(".trip-progressCenter", {
-  scrollTrigger: {
-    trigger: ".tripCenter",
-    // markers:true,
-    start: "top center",
-    end: "80% center",
-    scrub: true,
-  },
-  scaleY: 5.5,
-  transformOrigin: "top", 
-  ease: "none"
-})
+
 gsap.to(".trip-pin-center", {
   scrollTrigger:{
   trigger:".trip-pin-center",
-  start: "top 10%",
+  start: "top top",
   end: `${tripContentHeight} top`,
   // markers:true,
   pin:true,
@@ -208,11 +247,11 @@ gsap.to(".trip-pin-center", {
 
 //地圖效果
 //東岸
-gsap.to(".trip-map", {
+gsap.to(".trip-map-East", {
   scrollTrigger:{
-  trigger:".trip-map",
+  trigger:".trip-map-East",
   start: "top top",
-  end: `${tripContentHeight}  top`,
+  end: `80%  top`,
   // markers:true,
   pin:true,
 },
@@ -223,7 +262,7 @@ gsap.to(".tripStation", {
   trigger:".trip",
   start: "top top",
   end: `${tripContentHeight} top`,
-  markers:true,
+  // markers:true,
   // toggleActions: "play reset play reset"
 },
 opacity:0})
@@ -279,7 +318,7 @@ gsap.to("#tripWestMap", {
   scrollTrigger:{
   trigger:"#tripWestMap",
   start: "top top",
-  end: `${tripContentHeight}  top`,
+  end: `80%  top`,
   // markers:true,
   pin:true,
 },
@@ -345,7 +384,7 @@ gsap.to("#tripCenterMap", {
   scrollTrigger:{
   trigger:"#tripCenterMap",
   start: "top top",
-  end: `${tripContentHeight}  top`,
+  end: `80%  top`,
   // markers:true,
   pin:true,
 },
@@ -390,7 +429,7 @@ opacity:1,duration:3})
 
 gsap.to(".DayTrip14", {
   scrollTrigger:{
-  trigger:"#DayTrip4",
+  trigger:"#DayTrip14",
   start: "top top",
   end: "bottom top",
   toggleActions: "play reset play reset"

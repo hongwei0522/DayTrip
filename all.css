@@ -46,6 +46,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/*滑順*/
+html {
+	scroll-behavior: smooth;
+  }
 
 /* 頁首 */
 .title{
@@ -68,6 +72,9 @@ table {
 	text-decoration: none;
 	font-size: 24px;
 	color: black;
+}
+.title-projcet-positione:hover {
+	color: rgb(165, 219, 245);
 }
 
 /* 基隆簡介 */
@@ -151,39 +158,39 @@ table {
   	height: 100%;
 	transition: all .3s ease-out;
 	display: inline-block;
-	background-image: linear-gradient(red 0%, orange 100%);
+	background-image: linear-gradient(rgb(63, 174, 226) 0%, rgb(16, 219, 209) 100%);
 }
 .trip-progressWest{
 	width: 100%;
   	height: 100%;
 	transition: all .3s ease-out;
 	display: inline-block;
-	background-image:linear-gradient(orange 0%, red 100%);
+	background-image:linear-gradient(rgb(16, 219, 209) 0%, rgb(63, 174, 226) 100%);
 }
 .trip-progressCenter{
 	width: 100%;
   	height: 100%;
 	transition: all .3s ease-out;
 	display: inline-block;
-	background-image:linear-gradient(red 0%, orange 100%);
+	background-image:linear-gradient(rgb(63, 174, 226) 0%, rgb(16, 219, 209) 100%);
 }
 
 .tripEastDiv{
-	border: 1px black solid;
+	border: 2px black solid;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 }
 .tripWestDiv{
-	border: 1px black solid;
+	border: 2px black solid;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 }
 .tripCenterDiv{
-	border: 1px black solid;
+	border: 2px black solid;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -191,8 +198,10 @@ table {
 }
 .trip-center{
 	width: 30%;
-	border: 3px black solid;
 	justify-content: space-between;
+}
+.pin-spacer {
+	overflow: hidden !important;
 }
 .trip-location{
 	width: 300px;
@@ -212,6 +221,8 @@ table {
 	padding: 0 20px 20px 20px;
 	text-align: left;
 	font-size: 20px;
+	line-height: 28px;
+    letter-spacing: 4px;
 }
 .trip-button{
 	width: 100%;
@@ -222,23 +233,47 @@ table {
 	width: 30%;
 	border-right: 1px black solid;
 	border-radius: 30px;
-	font-size: 20px;
+	font-size: 14px;
+    line-height: 32px;
+    letter-spacing: 2px;
+	background-color: rgb(165, 219, 245);
 }
 .trip-button-next{
 	width: 30%;
 	border-left: 1px black solid;
 	border-radius: 30px;
-	font-size: 20px;
+	font-size: 14px;
+    line-height: 32px;
+    letter-spacing: 2px;
+	background-color: rgb(165, 219, 245);
 }
 
-.trip-map{
+.trip-map-East{
 	width: 60%;
 	position: relative;
+	background-image: url("https://github.com/hongwei0522/DayTrip/blob/master/picture/%E6%9D%B1%E5%B2%B8.JPG?raw=true");
+	background-repeat: no-repeat;
+	background-size: 100% 100vh;
 }
-.trip-map-gif{
+.trip-map-West{
+	width: 60%;
+	position: relative;
+	background-image: url("https://github.com/hongwei0522/DayTrip/blob/master/picture/%E8%A5%BF%E5%B2%B8.JPG?raw=true");
+	background-repeat: no-repeat;
+	background-size: 100% 100vh;
+}
+.trip-map-Center{
+	width: 60%;
+	position: relative;
+	background-image: url("https://github.com/hongwei0522/DayTrip/blob/master/picture/%E5%B8%82%E5%8D%80.JPG?raw=true");
+	background-repeat: no-repeat;
+	background-size: 100% 100vh;
+
+}
+/* .trip-map-gif{
 	position: absolute;
 	width: 100%;
-}
+} */
 .tripStation{
 	position: absolute;
 	opacity: 1;
@@ -367,6 +402,7 @@ table {
 		width: 150px;
 		height: 150px;
 		margin-bottom: 30px;
+		margin-right: 10px;
 	}
 	.trip-title{
 		width: 20%;
