@@ -379,6 +379,7 @@ html {
 }
 
 @media (max-width: 479px){
+
     .location-alllogo{
 		display: flex;
 		flex-direction: column;
@@ -386,6 +387,10 @@ html {
 	}
 	.title{
 		justify-content: space-between;
+	}
+	.title-logo{
+		width: 100px;
+		height: 100px;
 	}
 	.title-project{
 		width: 60%;
@@ -410,6 +415,9 @@ html {
 	.trip-logo{
 		width: 38px;
 		height: 38px;
+	}
+	.title-projcet-positione{
+		font-size: 18px;
 	}
 	.trip-word{
 		font-size: 12px;
