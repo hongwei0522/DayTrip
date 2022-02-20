@@ -216,7 +216,7 @@ let tripContentHeight = tripEastDivHeight*4;
 gsap.to(".trip-pin-east", {
   scrollTrigger:{
   trigger:".trip-pin-east",
-  start: "top top",
+  start: "top 10%",
   end: `${tripContentHeight} top`,
   // markers:true,
   pin:true,
@@ -227,7 +227,7 @@ gsap.to(".trip-pin-east", {
 gsap.to(".trip-pin-west", {
   scrollTrigger:{
   trigger:".trip-pin-west",
-  start: "top top",
+  start: "top 10%",
   end: `${tripContentHeight} top`,
   // markers:true,
   pin:true,
@@ -238,7 +238,7 @@ gsap.to(".trip-pin-west", {
 gsap.to(".trip-pin-center", {
   scrollTrigger:{
   trigger:".trip-pin-center",
-  start: "top top",
+  start: "top 10%",
   end: `${tripContentHeight} top`,
   // markers:true,
   pin:true,

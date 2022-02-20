@@ -387,10 +387,19 @@ html {
 	}
 	.title{
 		justify-content: space-between;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		z-index: 1;
+		background-color: white;
+		width: 100%;
 	}
 	.title-logo{
-		width: 100px;
-		height: 100px;
+		width: 70px;
+		height: 70px;
+	}
+	.introduction{
+		margin-top: 72px;
 	}
 	.title-project{
 		width: 60%;
